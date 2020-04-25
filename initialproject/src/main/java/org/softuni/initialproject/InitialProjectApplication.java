@@ -1,13 +1,13 @@
-package org.softuni.intialproject;
+package org.softuni.initialproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IntialprojectApplication {
+public class InitialProjectApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(IntialprojectApplication.class, args);
+        SpringApplication.run(InitialProjectApplication.class, args);
     }
 
 }
