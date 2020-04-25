@@ -1,10 +1,10 @@
-package org.rado.app;
+package org.softuni.intialproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringMvcJspDemoApplicationTests {
+class IntialprojectApplicationTests {
 
     @Test
     void contextLoads() {
