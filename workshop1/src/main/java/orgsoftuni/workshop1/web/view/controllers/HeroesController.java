@@ -1,4 +1,4 @@
-package orgsoftuni.workshop1.web.controllers;
+package orgsoftuni.workshop1.web.view.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -7,14 +7,14 @@ import orgsoftuni.workshop1.services.models.auth.LoginUserServiceModel;
 import orgsoftuni.workshop1.services.models.heroes.HeroCreateModel;
 import orgsoftuni.workshop1.services.services.HeroService;
 import orgsoftuni.workshop1.services.services.UserService;
-import orgsoftuni.workshop1.web.models.HeroRegisterModel;
+import orgsoftuni.workshop1.web.base.BaseController;
+import orgsoftuni.workshop1.web.view.models.HeroRegisterModel;
 
 import javax.servlet.http.HttpSession;
-import java.util.Enumeration;
 
 @Controller
 @RequestMapping("/heroes")
-public class HeroesController {
+public class HeroesController extends BaseController {
 
     private final ModelMapper modelMapper;
     private final HeroService heroService;
@@ -37,15 +37,11 @@ public class HeroesController {
     }
 
     @PostMapping("/create")
-    public String createUser(@ModelAttribute HeroRegisterModel model, HttpSession session) {
+    public String createHero(@ModelAttribute HeroRegisterModel model, HttpSession session) {
         HeroCreateModel createModel = this.modelMapper.map(model, HeroCreateModel.class);
+        LoginUserServiceModel user = (LoginUserServiceModel) session.getAttribute("user");
+        String username = user.getUsername();
 
-        Object sessionModel = session.getAttribute("user");
-        String username = "";
-
-        if (sessionModel instanceof LoginUserServiceModel) {
-            username = ((LoginUserServiceModel)sessionModel).getUsername();
-        }
         this.heroService.create(createModel, username);
         return "redirect:/home";
     }

@@ -1,4 +1,4 @@
-package orgsoftuni.workshop1.web.models;
+package orgsoftuni.workshop1.web.view.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

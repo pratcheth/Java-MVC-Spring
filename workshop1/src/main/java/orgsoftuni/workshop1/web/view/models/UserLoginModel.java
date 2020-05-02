@@ -1,4 +1,4 @@
-package orgsoftuni.workshop1.web.models;
+package orgsoftuni.workshop1.web.view.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,10 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserRegisterModel {
+public class UserLoginModel {
     private String username;
-    private String email;
     private String password;
-    private String confirmPassword;
-
 }

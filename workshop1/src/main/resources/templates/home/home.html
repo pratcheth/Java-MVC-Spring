@@ -14,18 +14,17 @@
     <hr class="my-3"/>
     <div class="container">
         <div class="text-center">
+            <th:block th:if="${session.user.getHeroName() == null}">
             <h2>User, you don't have a hero. Click below and create one.</h2>
             <a href="/heroes/create" class="btn btn-secondary">Create hero</a>
+            </th:block>
+            <th:block th:unless="${session.user.getHeroName() == null}">
+                <h2>User, you have a hero. Buy items to make your hero stronger and latter join the battle</h2>
+            </th:block>
         </div>
 
     </div>
 </main>
-<footer class="footer bg-dark  py-2">
-    <div class="container-fluid text-center">
-        <div class="footer-background h5 text-white">
-            &#169; CopyRight Victorious Arena. All rights reserved.
-        </div>
-    </div>
-</footer>
+<th:block th:include="~{fragments/footer}" />
 </body>
 </html>

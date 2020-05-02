@@ -1,4 +1,4 @@
-package orgsoftuni.workshop1.web.controllers;
+package orgsoftuni.workshop1.web.view.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

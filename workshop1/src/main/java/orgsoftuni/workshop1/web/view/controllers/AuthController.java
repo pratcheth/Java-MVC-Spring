@@ -1,4 +1,4 @@
-package orgsoftuni.workshop1.web.controllers;
+package orgsoftuni.workshop1.web.view.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import orgsoftuni.workshop1.services.models.auth.LoginUserServiceModel;
 import orgsoftuni.workshop1.services.models.auth.UserRegisterServiceModel;
 import orgsoftuni.workshop1.services.services.AuthService;
-import orgsoftuni.workshop1.web.models.UserRegisterModel;
+import orgsoftuni.workshop1.web.view.models.UserRegisterModel;
 
 import javax.servlet.http.HttpSession;
 
